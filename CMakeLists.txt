@@ -21,6 +21,8 @@ FetchContent_MakeAvailable(googletest)
 # and the test executable link against this.
 add_library(uav_core STATIC
         src/UAVState.cpp
+        src/UAVController.cpp
+        src/MissionManager.cpp
 )
 target_include_directories(uav_core PUBLIC include)
 
@@ -35,6 +37,9 @@ enable_testing()
 add_executable(uav_tests
         tests/test_UAVState.cpp
         tests/test_Vec3.cpp
+        tests/test_UAVController.cpp
+        tests/test_MissionManager.cpp
+
 )
 target_link_libraries(uav_tests PRIVATE uav_core GTest::gtest_main)
 include(GoogleTest)

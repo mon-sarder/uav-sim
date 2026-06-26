@@ -4,9 +4,9 @@
 // UAVState initializes with safe default values
 TEST(UAVStateTest, DefaultInitialization) {
     UAVState uav;
-    EXPECT_DOUBLE_EQ(uav.x, 0.0);
-    EXPECT_DOUBLE_EQ(uav.y, 0.0);
-    EXPECT_DOUBLE_EQ(uav.z, 0.0);
+    EXPECT_DOUBLE_EQ(uav.position.x, 0.0);
+    EXPECT_DOUBLE_EQ(uav.position.y, 0.0);
+    EXPECT_DOUBLE_EQ(uav.position.z, 0.0);
     EXPECT_DOUBLE_EQ(uav.battery, 100.0);
     EXPECT_EQ(uav.mode, FlightMode::IDLE);
 }

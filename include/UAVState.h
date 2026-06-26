@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include "Vec3.h"
 
 // Flight modes the UAV can be in at any given time
 enum class FlightMode {
@@ -17,15 +18,8 @@ std::string flightModeToString(FlightMode mode);
 // The complete state of the UAV at a single point in time.
 // Every system (navigation, telemetry, logging) reads from this struct.
 struct UAVState {
-    // Position in meters (x = east, y = north, z = altitude)
-    double x = 0.0;
-    double y = 0.0;
-    double z = 0.0;
-
-    // Velocity in m/s
-    double vx = 0.0;
-    double vy = 0.0;
-    double vz = 0.0;
+    Vec3 position;    // meters: x = east, y = north, z = altitude
+    Vec3 velocity;    // m/s
 
     // Heading in radians (0 = north, increases clockwise)
     double heading = 0.0;

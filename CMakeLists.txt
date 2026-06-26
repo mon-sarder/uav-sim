@@ -34,6 +34,7 @@ target_link_libraries(uav_main PRIVATE uav_core)
 enable_testing()
 add_executable(uav_tests
         tests/test_UAVState.cpp
+        tests/test_Vec3.cpp
 )
 target_link_libraries(uav_tests PRIVATE uav_core GTest::gtest_main)
 include(GoogleTest)
